@@ -1,0 +1,159 @@
+:root {
+  --input-margin-right: 0.5%;
+  --input-margin-bottom: 0.5%;
+  --req-input-padding-all: 10px 8px;
+  --req-input-padding: 10px 0px;
+  --req-features-pad: 8px 7px;
+  --req-features-mar: 8px 7px;
+  --resp-font-size: 14px;
+  --code-color: #D5B025;
+  --status-code-color: green;
+}
+
+.marginRight {
+  margin-right: var(--input-margin-right);
+}
+
+
+.marginBottom {
+  margin-bottom: var(--input-margin-bottom);
+  padding-bottom: var(--input-padding-bottom);
+}
+
+.reqSendDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.req_method {
+  cursor: pointer;
+  width: 100px !important;
+  min-width: 95px !important;
+  padding: var(--req-input-padding-all) !important;
+}
+
+.reqSendBtn {
+  width: 15%;
+  padding: var(--req-input-padding) !important;
+}
+
+.req_url {
+  padding: var(--req-input-padding-all) !important;
+}
+
+.req_features {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.req_features>li {
+  background-color: transparent !important;
+  cursor: pointer;
+  padding: var(--req-features-pad);
+  margin: var(--req-features-mar);
+}
+
+.getReqTxtarea {
+  resize: none !important;
+  overflow-y: auto;
+  overflow-x: hidden
+}
+
+.req_inputLabel {
+  font-size: 15px;
+}
+
+.dflex-betweeen {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dflex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 300px;
+  min-height: 300px;
+}
+
+.width50 {
+  width: 49.5%;
+}
+
+.dflex-col {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.frow {
+  flex-direction: row !important;
+}
+
+.fcol {
+  flex-direction: column !important;
+}
+
+.w100 {
+  width: 100%;
+}
+
+#respPre {
+  max-height: 300px;
+  min-height: 300px;
+  overflow-x: hidden;
+  font-size: 15px;
+}
+
+#respPre>code {
+  font-size: var(--resp-font-size) !important;
+}
+
+.align-end {
+  align-self: flex-end;
+}
+
+.status-code {
+  font-weight: 800;
+}
+
+.status-color {
+  color: var(--status-code-color);
+  margin-left: 0px !important;
+}
+
+.disNone {
+  opacity: 0;
+}
+
+.loadingDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.widHeight {
+  width: 100%;
+  height: 100%;
+}
+
+.whiteSvg {
+  fill: white;
+}
+
+.codeStyle {
+  color: var(--code-color);
+}
