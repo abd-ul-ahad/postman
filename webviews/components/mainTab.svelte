@@ -10,6 +10,8 @@
     let reqUrl: string;
     let data: any;
     let jsonBody: any;
+    let respHeaders: any;
+    let respStatusOk: any;
     let statusCode: any;
     let isProcessing: any;
 
@@ -65,14 +67,25 @@
                     : JSON.stringify(jsonBody),
         });
         data = await resp.json();
-        isProcessing = false;
+
+        console.log("Type:", resp.type);
+
+        respHeaders = resp.headers;
+        
+        
+        respStatusOk = resp.ok;
         statusCode = resp.status;
+        isProcessing = false;
     };
 
     // Sending requests
     const sendReqHandler = (e: Event) => {
         if (reqMethod !== "METHOD") {
-            jsonReqHandler();
+            try {
+                jsonReqHandler();
+            } catch (e) {
+                console.log("Error: " + e);
+            }
         } else {
             errorRenderer("log");
         }
@@ -138,7 +151,7 @@
     </div>
     <hr />
     <div class="respSec widHeight">
-        <Main {isProcessing} {data} {statusCode} />
+        <Main {respHeaders} {respStatusOk} {isProcessing} {data} {statusCode} />
     </div>
 </div>
 <!-- !SECTION Html -->

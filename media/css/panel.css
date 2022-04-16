@@ -157,3 +157,22 @@
 .codeStyle {
   color: var(--code-color);
 }
+
+.headersTable{
+  width: 100%;
+}
+
+.tableHeadingRow{
+  width: 100%;
+}
+.tableHeadingRow > th{
+  width: 50%;
+}
+
+.rowDesign{
+  padding: 10px;
+  border-top: 1px solid white;
+}
+.bRight{
+  border-left: 1px solid white;
+}

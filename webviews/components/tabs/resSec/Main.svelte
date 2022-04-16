@@ -5,6 +5,8 @@
 
     export let data: any;
     export let statusCode: any = 0;
+    export let respStatusOk: any;
+    export let respHeaders: any;
     export let isProcessing: any = false;
 
     let curTab = "response";
@@ -23,28 +25,35 @@
             <li on:click={disHead}>Headers</li>
         </ul>
 
-        <ul class="req_features">
-            <li class="align-end status-code">Status Code:</li>
-            <li
-                class={statusCode == 0
-                    ? "align-end status-code status-color disNone"
-                    : "align-end status-code status-color"}
-            >
-                {statusCode}
-            </li>
-        </ul>
+        {#if !isProcessing}
+            <ul class="req_features">
+                <li class="align-end status-code">Status Code:</li>
+                <li
+                    class={statusCode == 0
+                        ? "align-end status-code status-color disNone"
+                        : "align-end status-code status-color"}
+                >
+                    {statusCode}
+                    {respStatusOk ? "Ok" : "Failed"}
+                </li>
+            </ul>
+        {:else}
+            <ul class="req_features">
+                <li class="align-end status-code">Waiting for Response</li>
+            </ul>
+        {/if}
     </div>
     <div>
-        {#if isProcessing}
-            <Loading />
-        {:else}
+        {#if !isProcessing}
             <!--  -->
             {#if curTab === "response"}
                 <JsonResp {data} />
             {:else if curTab === "headers"}
-                <Headers />
+                <Headers {respHeaders} />
             {/if}
             <!--  -->
+        {:else}
+            <Loading />
         {/if}
     </div>
 </div>

@@ -1,4 +1,4 @@
-import App from "../components/mainTab.svelte";
+import App from "../components/MainTab.svelte";
 
 const app = new App({
   target: document.body,
