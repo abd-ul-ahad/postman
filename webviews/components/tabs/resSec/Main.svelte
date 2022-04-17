@@ -16,6 +16,14 @@
     const disHead = () => {
         curTab = "headers";
     };
+
+    const indicatorColor = () => {
+        if (statusCode <= 299){
+            return "align-end status-code status-color";
+        } else {
+            return "align-end status-code status-f-color";
+        }
+    }
 </script>
 
 <div>
@@ -25,13 +33,13 @@
             <li on:click={disHead}>Headers</li>
         </ul>
 
-        {#if !isProcessing}
+        {#if !isProcessing} <!--align-end status-code status-color-->
             <ul class="req_features">
                 <li class="align-end status-code">Status Code:</li>
                 <li
                     class={statusCode == 0
                         ? "align-end status-code status-color disNone"
-                        : "align-end status-code status-color"}
+                        : indicatorColor()}
                 >
                     {statusCode}
                     {respStatusOk ? "Ok" : "Failed"}
@@ -47,7 +55,7 @@
         {#if !isProcessing}
             <!--  -->
             {#if curTab === "response"}
-                <JsonResp {data} />
+                <JsonResp {statusCode} {data} />
             {:else if curTab === "headers"}
                 <Headers {respHeaders} />
             {/if}

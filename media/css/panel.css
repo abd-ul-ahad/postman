@@ -8,6 +8,7 @@
   --resp-font-size: 14px;
   --code-color: #D5B025;
   --status-code-color: green;
+  --status-f-code-color: #B4700E;
 }
 
 .marginRight {
@@ -132,6 +133,10 @@
 
 .status-color {
   color: var(--status-code-color);
+  margin-left: 0px !important;
+}
+.status-f-color {
+  color: var(--status-f-code-color);
   margin-left: 0px !important;
 }
 
