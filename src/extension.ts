@@ -22,7 +22,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// Panel
 	context.subscriptions.push(
-		vscode.commands.registerCommand("postman.world", () => {
+		vscode.commands.registerCommand("postman.RunPostmanClone", () => {
 			WebPanel.createOrShow(context.extensionUri);
 		})
 	);
